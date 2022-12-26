@@ -12,7 +12,7 @@ export interface HeroProps {
 
 const HeroWithPhoto: React.FunctionComponent<HeroProps> = (props) => {
   return (
-    <section className={twclsx('pb-20 pt-10')}>
+    <section className={twclsx('pb-10')}>
       <div
         className={twclsx(
           'flex flex-col-reverse',

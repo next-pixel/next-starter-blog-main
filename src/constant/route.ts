@@ -21,4 +21,9 @@ export const APP_ROUTE: Array<AppRoute> = [
     children: 'Privacy Policy',
     href: '/PrivacyPolicy'
   }
+  ,
+  {
+    children: 'Website Disclaimer',
+    href: '/WebsiteDisclaimer'
+  }
 ]

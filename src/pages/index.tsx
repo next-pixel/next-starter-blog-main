@@ -18,7 +18,8 @@ const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
   const meta = {
     title: ownerName,
     template: 'Personal Blog',
-    description: `I'm ${ownerName}, a software engineer in one of the biggest tech industry in the world, I personally writing mostly about web development and tech careers.`,
+    description: `Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge
+    of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`,
     openGraph: {
       images: [
         {
@@ -35,8 +36,6 @@ const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
     <Layout as='main' {...meta}>
       <HeroWithPhoto image='/static/avatar.jpg' imageAlt={ownerName} {...meta}>
         <p className={twclsx('max-w-prose mt-2')}>
-          If you want to get in touch with me, please catch me on one of my social media, I&apos;m always open when
-          I&apos;m out of my office.
         </p>
       </HeroWithPhoto>
 
