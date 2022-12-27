@@ -22,7 +22,7 @@ const PrivacyPolicyPage: NextPage = () => {
 
         <section
           className={twclsx(
-            'prose md:prose-lg dark:prose-invert py-20',
+            'md:prose-lg dark:prose-invert py-20 text-justify',
             'prose-a:no-underline prose-a:font-semibold prose-a:text-primary-4'
           )}
         >

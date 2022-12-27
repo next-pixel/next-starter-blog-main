@@ -15,7 +15,7 @@ const Header = () => {
     <header className={twclsx('fixed inset-0 h-20', 'bg-main-1 dark:bg-main-5 z-50')}>
       <div className={twclsx('h-2 w-full', 'bg-gradient-to-r', 'from-primary-3 to-secondary-3')} />
 
-      <section className={twclsx('layout', 'flex items-center justify-between', 'h-full -mt-1.5')}>
+      <section className={twclsx('layout max-w-5xl', 'flex items-center justify-between', 'h-full -mt-1.5')}>
         <Nav />
         <DrawerToggler />
         <DarkMode />

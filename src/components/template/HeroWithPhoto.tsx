@@ -25,7 +25,7 @@ const HeroWithPhoto: React.FunctionComponent<HeroProps> = (props) => {
           
         </figure>
       </div>
-      <p className={twclsx('max-w-prose')}>{props.description}</p>
+      <p className={twclsx('text-justify')}>{props.description}</p>
       {props.children}
     </section>
   )
