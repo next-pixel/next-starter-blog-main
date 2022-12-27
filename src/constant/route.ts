@@ -19,11 +19,11 @@ export const APP_ROUTE: Array<AppRoute> = [
   ,
   {
     children: 'Privacy Policy',
-    href: '/PrivacyPolicy'
+    href: '/privacy-policy'
   }
   ,
   {
     children: 'Website Disclaimer',
-    href: '/WebsiteDisclaimer'
+    href: '/website-disclaimer'
   }
 ]
