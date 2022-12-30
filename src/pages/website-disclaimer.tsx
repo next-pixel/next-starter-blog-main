@@ -5,8 +5,8 @@ import type { NextPage } from 'next'
 const WebsiteDisclaimerPage: NextPage = () => {
   const meta = {
     title: 'Website Disclaimer',
-    template: 'Website Disclaimer',
-    description: 'Website Disclaimer'
+    template: 'This is a disclaimer for the website Critical Thinking.',
+    description: 'Website Disclaimer - This is a disclaimer for the website Critical Thinking.'
   }
   return (
     <Layout {...meta} as='main'>

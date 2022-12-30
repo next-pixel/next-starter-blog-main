@@ -20,12 +20,22 @@ const HeroWithPhoto: React.FunctionComponent<HeroProps> = (props) => {
           'md:flex-row md:items-center md:justify-between'
         )}
       >
-        <h1 className={twclsx('text-4xl md:text-5xl')}>{props.title}</h1>
+        {/* <h1 className={twclsx('text-4xl md:text-5xl')}>{props.title}</h1>
         <figure className={twclsx('relative', 'w-20 h-20 md:w-24 md:h-24')}>
           
-        </figure>
+        </figure> */}
       </div>
+      {/* <p className={twclsx('text-justify')}>{props.description}</p> */}
+      <blockquote className={twclsx('from-primary-3 to-secondary-3')}>
+      <style jsx>
+        {`
+          blockquote {
+            border-image: linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-to)) 1;
+          }
+        `}
+      </style>
       <p className={twclsx('text-justify')}>{props.description}</p>
+    </blockquote>
       {props.children}
     </section>
   )

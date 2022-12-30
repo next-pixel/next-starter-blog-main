@@ -2,7 +2,8 @@ import '@/styles/tailwind.css'
 
 import Footer from '@/components/organism/Footer'
 import Header from '@/components/organism/Header'
-
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import { AnimatePresence, LazyMotion, Variants, domAnimation, m } from 'framer-motion'
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
@@ -22,10 +23,19 @@ const v: Variants = {
     y: 0
   }
 }
-
+const firebaseConfig = {
+  apiKey: "AIzaSyBTKKouXciwQZtzSsEx2wWf-C2bDt_SCyE",
+  authDomain: "krunal-shah.firebaseapp.com",
+  projectId: "krunal-shah",
+  storageBucket: "krunal-shah.appspot.com",
+  messagingSenderId: "37440834488",
+  appId: "1:37440834488:web:0befe8c22e55a126a4dd4d",
+  measurementId: "G-W69MC16XS0"
+};
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider attribute='class' storageKey='theme' enableSystem>
+      
       <LazyMotion features={domAnimation}>
         <Header />
         {/* disable initial animation to get higher score on lighthouse */}
@@ -49,5 +59,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     </ThemeProvider>
   )
 }
-
+let analytics;
+const app = initializeApp(firebaseConfig);
+if (app.name && typeof window !== 'undefined') {
+  analytics = getAnalytics(app);
+}
+export {analytics};
 export default MyApp

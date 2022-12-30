@@ -17,14 +17,18 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
   const meta = {
     title: ownerName,
-    template: 'Personal Blog',
+    template: 'A Personal krunal shah`s Blog',
     description: `Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`,
     openGraph: {
       type: 'website',
-        url: 'https://www.example.com/page',
+        url: 'https://krunal-shah.web.app/',
         title: ownerName,
         description: `Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`
-    }
+    },
+    additionalMetaTags:[{
+      name: 'google-site-verification',
+      content: '5e06x4xhLxiUVlXqg2b93KekaEyO1Fyo84aTZcBEwqo'
+    }]
   }
 
   return (

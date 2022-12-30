@@ -5,8 +5,8 @@ import type { NextPage } from 'next'
 const PrivacyPolicyPage: NextPage = () => {
   const meta = {
     title: 'Privacy Policy',
-    template: 'Privacy Policy',
-    description: 'Privacy Policy'
+    template: 'About Our Privacy Policy',
+    description: 'Privacy Policy About Our Privacy Policy'
   }
   return (
     <Layout {...meta} as='main'>
@@ -28,7 +28,7 @@ const PrivacyPolicyPage: NextPage = () => {
         >
           <h2>Who we are</h2>
 
-<p>Our website address is:&nbsp;https://aspdotnetkrunal.blogspot.com/</p>
+<p>Our website address is:&nbsp;https://krunal-shah.web.app/</p>
 
 <h2>Comments</h2>
 
