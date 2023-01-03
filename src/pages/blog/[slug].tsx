@@ -6,6 +6,7 @@ import {  useMetaData } from '@/hooks'
 import { dateFormat, dateStringToISO } from '@/libs/dateFormat'
 import { twclsx } from '@/libs/twclsx'
 import Link from 'next/link'
+import { BreadcrumbJsonLd } from 'next-seo';
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps, NextPage } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -28,6 +29,8 @@ interface BlogPostProps {
 const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource }) => {
   const metaData = useMetaData(data)
   //const isMediumScreen = useMediaQuery('(min-width: 768px)')
+  //const ISODate = dateStringToISO(data.published)
+  const siteURL = process.env.NEXT_PUBLIC_SITE_URL
   
 
   return (
@@ -88,6 +91,26 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource }) => {
         >
           <MDXRemote {...mdxSource} components={MDXComponents} />
         </section>
+        <BreadcrumbJsonLd
+      itemListElements={[
+        {
+          position: 1,
+          name: 'Home',
+          item: {siteURL},
+        },
+        {
+          position: 2,
+          name: 'Blog',
+          item: siteURL + '/blog',
+        },
+        {
+          position: 3,
+          name: data.title,
+          item: siteURL + '/blog/' + data.slug ,
+        }
+      ]}
+    />
+
       </article>
     </Layout>
   )
