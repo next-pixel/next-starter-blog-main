@@ -10,7 +10,7 @@ interface FooterLinkProps<T = SocialMediaProps | AppRoute> {
 
 const FooterLinks: React.FunctionComponent<FooterLinkProps> = ({ data }) => {
   return (
-    <div className={twclsx('flex flex-col gap-4 w-full')}>
+    <div className={twclsx('flex sm:flex-col md:flex-row gap-8 w-full')}>
       {data.map((val) => (
         <UnstyledLink
         className={twclsx(

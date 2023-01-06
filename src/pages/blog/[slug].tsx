@@ -6,7 +6,7 @@ import {  useMetaData } from '@/hooks'
 import { dateFormat, dateStringToISO } from '@/libs/dateFormat'
 import { twclsx } from '@/libs/twclsx'
 import Link from 'next/link'
-import { BreadcrumbJsonLd } from 'next-seo';
+import { BreadcrumbJsonLd,ArticleJsonLd } from 'next-seo';
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps, NextPage } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -94,16 +94,19 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource }) => {
         <BreadcrumbJsonLd
       itemListElements={[
         {
+          type: "ListItem",
           position: 1,
           name: 'Home',
-          item: {siteURL},
+          item: siteURL,
         },
         {
+          type: "ListItem",
           position: 2,
           name: 'Blog',
           item: siteURL + '/blog',
         },
         {
+          type: "ListItem",
           position: 3,
           name: data.title,
           item: siteURL + '/blog/' + data.slug ,
@@ -111,6 +114,19 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource }) => {
       ]}
     />
 
+  <ArticleJsonLd
+      url={siteURL + '/blog/' + data.slug}
+      title={data.title}
+      images={[
+        siteURL + '/static/default-thumbnail.jpg'
+      ]}
+      datePublished={data.last_modified}
+      dateModified={data.last_modified}
+      authorName={[data.author_name]}
+      publisherName={data.author_name}
+      publisherLogo={siteURL + data.author_image}
+      description={data.summary}
+    />
       </article>
     </Layout>
   )

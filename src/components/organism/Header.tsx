@@ -17,7 +17,7 @@ const Header = () => {
       <div className={twclsx('h-2 w-full', 'bg-gradient-to-r', 'from-green-300 via-blue-500 to-purple-600')} />
 
       <section className={twclsx('layout max-w-5xl', 'flex items-center justify-between', 'h-full -mt-1.5')}>
-        <div className='text-4xl md:text-5xl'><Link href='/' >Krunal shah</Link></div>
+        <div className='text-4xl md:text-2xl sm:text-2xl '><Link href='/' >Krunal shah</Link></div>
         <Nav />
         <DarkMode />
         <DrawerToggler />
