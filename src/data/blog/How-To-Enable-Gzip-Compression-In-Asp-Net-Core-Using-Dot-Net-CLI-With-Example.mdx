@@ -1,0 +1,65 @@
+---
+featured: true
+title: 'How To Enable Gzip Compression In Asp Net Core Using Dot Net CLI With Example'
+summary: 'GZIP is a generic compression method that can be applied to any stream of bits, need to do some configration changes in startup file in Dot Net core CLI 6'
+published: '01/09/2023'
+last_modified: '01/09/2023'
+author_name: 'Krunal shah'
+author_image: '/static/avatar.jpg'
+tags: ['Gzip', '.Net Core']
+keywords: ['What is gzip?', 'how gzip compression is works', 'What is the GZIP Compression advantages?','GZIP Compression in ASP.NET Core','How to make API call faster throw Gzip','How to speed up your Website throw gzip']
+---
+
+## Introduction
+
+[Gzip](https://en.wikipedia.org/wiki/Gzip) is a compression format that can be applied to any stream of bits. In terms of how it’s used on the web, it’s easiest thought of a way that makes your files “smaller”. When applying gzip compression to text files, you can see anywhere from 70-90% savings, on images or other files that are usually already “compressed”, savings are much smaller or in some cases nothing. Other than eliminating unnecessary resource
+
+## Enabling GZip dynamically at the code level
+
+Using dynamic [.NET CORE](https://dotnet.microsoft.com/en-us/) API libraries you can Gzip any text based files on request. This is great for content that may change (Think dynamic html, text, not JS, CSS) . The reason it’s not great for static content such as CSS or JS, is that those files will not change between requests, or really even between deployments. There is no advantage to dynamically compressing these each time they are requested.
+
+The code you need to make this work is contained in a [Nuget package](https://www.nuget.org/packages). So, you will need to run the following from your console.
+
+`Install-Package Microsoft.AspNetCore.ResponseCompression`
+
+*ConfigureServices method in your startup.cs*
+
+```CSharp
+public void ConfigureServices(IServiceCollection services)
+{
+ services.AddMvc();
+ services.AddResponseCompression();
+}
+```
+
+*You can also add other options*
+
+```CSharp
+services.AddResponseCompression(options =>
+{
+ options.EnableForHttps = true;
+ options.MimeTypes = new[] {"text/plain"};
+});
+```
+
+*GZip of certain mimetypes*
+
+`"text/plain"`
+`"text/css"`
+`"application/javascript"`
+`"text/html"`
+`"application/xml"`
+`"text/xml"`
+`"application/json"`
+`"text/json"`
+
+*configure method of startup.cs*
+
+```CSharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+{
+ app.UseResponseCompression();
+ app.UseMvc();
+}
+```
+

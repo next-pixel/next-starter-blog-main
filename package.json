@@ -16,6 +16,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "clsx": "^1.1.1",
     "firebase": "^9.15.0",
+    "firebase-admin": "^11.4.1",
     "framer-motion": "^6.3.0",
     "gray-matter": "^4.0.3",
     "jotai": "^1.6.4",

@@ -38,7 +38,7 @@ const HeroWithPhoto: React.FunctionComponent<HeroProps> = (props) => {
       </div> */}
       <br></br>
             <div className="flex flex-col items-center -mt-20 pt-20">
-                <img src={props.image} alt={props.imageAlt} className="w-40 border-4 border-white rounded-full" />
+                <img src={props.image} alt={props.imageAlt} title={props.imageAlt}  className="w-40 border-4 border-white rounded-full" />
                 <div className="flex items-center space-x-2 mt-2">
                     <p className="text-2xl">Krunal Shah</p>
                     <span className="bg-blue-500 rounded-full p-1" title="Verified">
@@ -49,7 +49,7 @@ const HeroWithPhoto: React.FunctionComponent<HeroProps> = (props) => {
                 </div>
                 <p className="text-black-700">Senior Software Engineer at Clarion</p>
                 <p className="text-sm text-black-500">Ahmedabad, India</p><br></br>
-                <p className="text-sm text-black-500">{props.description}</p>
+                <p className="text-black-500">{props.description}</p>
             </div>
             <div className="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">
                 <div className="flex items-center space-x-4 mt-2">

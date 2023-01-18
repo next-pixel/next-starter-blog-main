@@ -8,7 +8,7 @@ import { AnimatePresence, LazyMotion, Variants, domAnimation, m } from 'framer-m
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
 import 'react-tippy/dist/tippy.css'
-
+import type { NextApiRequest, NextApiResponse } from 'next'
 const v: Variants = {
   hidden: {
     opacity: 0,
@@ -65,4 +65,14 @@ if (app.name && typeof window !== 'undefined') {
   analytics = getAnalytics(app);
 }
 export {analytics};
+export function handler(req: NextApiRequest, res: NextApiResponse) {
+  res.setHeader(
+    'Cache-Control',
+    'public, max-age=31536000, immutable'
+  )
+
+  return {
+    props: {},
+  }
+}
 export default MyApp

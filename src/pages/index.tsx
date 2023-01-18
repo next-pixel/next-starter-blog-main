@@ -2,7 +2,7 @@ import UnstyledLink from '@/components/atoms/UnstyledLink'
 import BlogList from '@/components/organism/BlogList'
 import HeroWithPhoto from '@/components/template/HeroWithPhoto'
 import Layout from '@/components/template/Layout'
-
+import UnderlineLink from '@/components/mollecules/UnderlineLink'
 import { getBlog, ownerName } from '@/helpers'
 import { twclsx } from '@/libs/twclsx'
 
@@ -17,13 +17,13 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
   const meta = {
     title: ownerName,
-    template: 'A Personal krunal shah`s Blog',
-    description: `Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`,
+    template: 'A Personal krunal shah`s Blog | Fullstack Developer',
+    description: `I am Krunal Shah or you can say kunal shah, i am writing a blogs, i have Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`,
     openGraph: {
       type: 'website',
         url: 'https://krunal-shah.web.app/',
         title: ownerName,
-        description: `Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`
+        description: `I am Krunal Shah or you can say kunal shah, i am writing a blogs, i have Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`
     },
     additionalMetaTags:[{
       name: 'google-site-verification',
@@ -63,44 +63,94 @@ const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
         <h4 className="mb-8 text-3xl font-bold text-center md:text-left">Experience</h4>
         <div className="grid grid-cols-1 md:grid-cols-6 my-10">
             <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-                <h5 className="text-xl md:text-2xl font-bold">Full Stack Developer</h5>
-                <h6 className="text-lg font-bold">Facebook</h6>
-                <p>Jan 2015 - present</p>
+                <h5 className="text-xl md:text-2xl font-bold">Sr. Software Engineer L2</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://www.clariontech.com/'>Clarion Technologies</UnderlineLink></h6>
+                <p>Feb 2022 - present</p>
             </div>
             <div className="flex flex-col col-span-4">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eveniet deleniti tempore veritatis
-                    adipisci accusantium voluptatibus vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-                    laudantium ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi non incidunt
-                    voluptates molestiae delectus nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-                    harum voluptates praesentium. Suscipit itaque officiis odio ut!</p>
+                <ul>
+                  <li>Najm Insurance WhatsApp backend API</li>
+                  <li>Najm Insurance IVR System API</li>
+                  <li>Worked on Saudi Arabia based client with backend projects</li>
+                </ul>
             </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-6 my-10">
             <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-                <h5 className="text-xl md:text-2xl  font-bold">Software Developer</h5>
-                <h6 className="text-lg font-bold">Google</h6>
-                <p>Feb 2010 - Jan 2015</p>
+                <h5 className="text-xl md:text-2xl  font-bold">Sr. Software Engineer</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://www.promptsoftech.com/'>Prompt Softech</UnderlineLink></h6>
+                <p>May 2020 - Feb 2022</p>
             </div>
             <div className="flex flex-col col-span-4">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eveniet deleniti tempore veritatis
-                    adipisci accusantium voluptatibus vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-                    laudantium ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi non incidunt
-                    voluptates molestiae delectus nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-                    harum voluptates praesentium. Suscipit itaque officiis odio ut!</p>
+            <ul>
+                  <li>TVS Motors Website & Backend API for Mobile</li>
+                  <li>US based POB Company that prove HR related service and we have created Custom client specific product</li>
+                  <li>Worked on US based Investment organization and Nop commerce related development</li>
+                </ul>
             </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-6 my-10">
             <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-                <h5 className="text-xl md:text-2xl  font-bold">Web Developer</h5>
-                <h6 className="text-lg font-bold">IBM</h6>
-                <p>Apr 2008 - Feb 2010</p>
+                <h5 className="text-xl md:text-2xl  font-bold">Software Engineer</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://www.varologic.co.in/'>Varologic Technologies</UnderlineLink></h6>
+                <p>July 2019 - May 2020</p>
             </div>
             <div className="flex flex-col col-span-4">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eveniet deleniti tempore veritatis
-                    adipisci accusantium voluptatibus vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-                    laudantium ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi non incidunt
-                    voluptates molestiae delectus nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-                    harum voluptates praesentium. Suscipit itaque officiis odio ut!</p>
+            <ul>
+                  <li>Victorian Plumbing Uk`s Leading E commerce Website in Asp.Net MVC C# With SQL Server 2016 Database</li>
+                  <li>Warehouse management system Windows Based Software for inventory in shop and Reports and API Project for Mobile
+application</li>
+                  <li>Multiple Payment method`s and refund module, shipping module with third party API integration,  Windows service for Sync
+Data between two Database</li>
+<li>Worked in Asp.net Core API For IVR Callstream Payment Method</li>
+                </ul>
+            </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+            <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+                <h5 className="text-xl md:text-2xl  font-bold">Software Engineer</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://www.tmspl.com/'>TM SYSTEMS</UnderlineLink></h6>
+                <p>Nov 2017 - July 2019</p>
+            </div>
+            <div className="flex flex-col col-span-4">
+            <ul>
+                  <li>Core Banking Software in Asp.Net C# With Oracle 11g Database</li>
+                  <li>Online Banking With security & Rich crystal reports Development</li>
+                  <li>Console Application for transaction & Working with Rest api</li>
+<li>Mobile application web services and api integration</li>
+                </ul>
+            </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+            <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+                <h5 className="text-xl md:text-2xl  font-bold">Project Associate</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://www.inflibnet.ac.in/'>INFLIBNET</UnderlineLink></h6>
+                <p>Oct 2015 - Nov 2017</p>
+            </div>
+            <div className="flex flex-col col-span-4">
+            <ul>
+                  <li>Developing University Grant Commission UGC Website.</li>
+                  <li>Maintaining Existing UGC Website and Database of Website and e-SART.</li>
+                  <li>NIRF - National Institutional Ranking Framework</li>
+
+                </ul>
+            </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+            <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+                <h5 className="text-xl md:text-2xl  font-bold">Jr. Programmer</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://whitepearl.biz/'>White Pearl</UnderlineLink></h6>
+                <p>Jun 2014 - Oct 2015</p>
+            </div>
+            <div className="flex flex-col col-span-4">
+            <ul>
+                  <li>Booksforyou :Ecommere Dynamic Website, Asp.net C# 4.0, MS Sql Server, Payment Gateway</li>
+                  <li>albatra.com : Ecommere Dynamic Website, Asp.net C# 4.0, MS Sql Server, Payment Gateway, Stock maintain from multiple
+location throw web services</li>
+                  <li>Royalcircuits : Online circuit order system and dynamic website, Asp.net C# 4.0, MS Sql Server, Payment Gateway</li>
+                  <li>Growmore Insurance : An Application to maintain insurance data with reminder sms, email with dynamic reports, Dynamic
+website</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -109,18 +159,19 @@ const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
     <section >
         <h4 className="mb-8 text-3xl font-bold text-center md:text-left">Education</h4>
         <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-            <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-                <h5 className="text-xl md:text-2xl  font-bold">B.S. Computer Science</h5>
-                <h6 className="text-lg font-bold">Harward University</h6>
-                <p>Jan 2015 - present</p>
+            <div className="flex flex-col col-span-11 mb-8 md:mb-0">
+                <h5 className="text-xl md:text-2xl  font-bold">M.Sc. Information Technologies</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://www.ganpatuniversity.ac.in/'>Ganpat University</UnderlineLink></h6>
+                <p>APR 2012 - Mar 2014</p>
             </div>
-            <div className="flex flex-col col-span-4 ">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eveniet deleniti tempore veritatis
-                    adipisci accusantium voluptatibus vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-                    laudantium ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi non incidunt
-                    voluptates molestiae delectus nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-                    harum voluptates praesentium. Suscipit itaque officiis odio ut!</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+            <div className="flex flex-col col-span-11 mb-8 md:mb-0">
+                <h5 className="text-xl md:text-2xl  font-bold">B.Sc. Computer Application</h5>
+                <h6 className="text-lg font-bold"><UnderlineLink href='https://www.ganpatuniversity.ac.in/'>Ganpat University</UnderlineLink></h6>
+                <p>APR 2009 - Mar 2012</p>
             </div>
+            
         </div>
     </section>
       <br></br>
