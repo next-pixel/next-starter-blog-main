@@ -8,6 +8,7 @@ import { AnimatePresence, LazyMotion, Variants, domAnimation, m } from 'framer-m
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
 import 'react-tippy/dist/tippy.css'
+import { LogoJsonLd } from 'next-seo';
 import type { NextApiRequest, NextApiResponse } from 'next'
 const v: Variants = {
   hidden: {
@@ -38,6 +39,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       
       <LazyMotion features={domAnimation}>
         <Header />
+        <LogoJsonLd
+      logo="https://krunal-shah.web.app/static/Krunal-shah-logo.png"
+      url="https://krunal-shah.web.app/"
+    />
         {/* disable initial animation to get higher score on lighthouse */}
         <AnimatePresence initial={false} onExitComplete={() => window.scrollTo(0, 0)} exitBeforeEnter>
           <m.div

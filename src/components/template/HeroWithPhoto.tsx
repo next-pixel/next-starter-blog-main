@@ -1,7 +1,6 @@
 
 
 import { twclsx } from '@/libs/twclsx'
-
 export interface HeroProps {
   title: string
   description: string
@@ -59,7 +58,7 @@ const HeroWithPhoto: React.FunctionComponent<HeroProps> = (props) => {
                         </svg>
                         <span>Connect</span>
                     </button> */}
-                    <a href='/static/Krunal_Shah_8YearDotNetDeveloper.pdf' download="Krunal_Shah_CV_FullStack_Developer" target='_blank'>
+                    <a href='/static/Krunal_Shah_8YearDotNetDeveloper.pdf' download="Krunal_Shah_CV_FullStack_Developer" target='_blank' title='Krunal_Shah_8YearDotNetDeveloper.pdf'>
                     <button className="flex items-center bg-blue-600 hover:bg-blue-700 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100" >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" clipRule="evenodd"></path>

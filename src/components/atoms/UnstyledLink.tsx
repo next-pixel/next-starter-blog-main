@@ -18,7 +18,7 @@ export type UnstyledLinkProps = {
 const UnstyledLink: React.FunctionComponent<UnstyledLinkProps> = ({ href, className, children, ...props }) => {
   if (href.toString().startsWith('http')) {
     return (
-      <a {...props} href={href as string} className={twclsx(className)} target='_blank' rel='noopener noreferrer'>
+      <a {...props} href={href as string} className={twclsx(className)} target='_blank' rel='noopener noreferrer' title={children?.toString()}>
         {props.sr && <span className='sr-only'>{props.sr}</span>}
         {children}
       </a>

@@ -3,7 +3,7 @@ import DrawerToggler from '@/components/mollecules/DrawerToggler'
 import Nav from '@/components/mollecules/Nav'
 
 import { twclsx } from '@/libs/twclsx'
-import Link from 'next/link'
+import UnstyledLink from '@/components/atoms/UnstyledLink'
 import { useRouter } from 'next/router'
 
 const Header = () => {
@@ -16,8 +16,8 @@ const Header = () => {
       
       <div className={twclsx('h-2 w-full', 'bg-gradient-to-r', 'from-green-300 via-blue-500 to-purple-600')} />
 
-      <section className={twclsx('layout max-w-5xl', 'flex items-center justify-between', 'h-full -mt-1.5')}>
-        <div className='text-4xl md:text-2xl sm:text-2xl '><Link href='/' >Krunal shah</Link></div>
+      <section className={twclsx('layout max-w-7xl', 'flex items-center justify-between', 'h-full -mt-1.5')}>
+        <div className='text-4xl md:text-2xl sm:text-2xl '><UnstyledLink href='/' sr='Krunal Shah Blog' >Krunal shah</UnstyledLink></div>
         <Nav />
         <DarkMode />
         <DrawerToggler />

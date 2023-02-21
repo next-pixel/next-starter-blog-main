@@ -1,0 +1,52 @@
+---
+featured: false
+title: 'SQL Server : Understanding the Differences and Uses of Stored Procedures and Functions'
+summary: 'Understand the key differences between stored procedures & functions in SQL Server. Stored procedures can have side effects & execute multiple statements while functions can only return a single value or table. This can help developers choose the right tool for their specific task'
+published: '01/20/2022'
+last_modified: '01/20/2022'
+author_name: 'Krunal Shah'
+author_image: '/static/avatar.jpg'
+tags: ['Stored Procedures','Functions']
+keywords: ['The Next Big Thing in What`s New In Asp.net Core 7.0', 'Asp.net Core 7.0', '.net Core 7.0','Dot net 7','Dot net core C# release','Is .NET 7 .NET Core?','Is .NET Core 7 released?','What is new NET Core 7?','What is the difference between .NET 7 and .NET 6?','What is .NET Core latest version?']
+---
+
+## Introduction
+
+In SQL Server, both stored procedures and functions are used to perform specific tasks, but they have some key differences that are important to understand.
+
+## What is stored procedure ?
+
+A stored procedure is a precompiled collection of Transact-SQL statements that can be used to perform a specific task. Stored procedures can accept input parameters, execute a set of SQL statements, and return output parameters and/or a result set. They can also be used to perform tasks such as data validation and data manipulation. One of the main benefits of using stored procedures is that they can improve performance by reducing the amount of data sent over the network, as well as by allowing the database engine to reuse execution plans.
+
+## What is function ?
+
+A function, on the other hand, is a set of Transact-SQL statements that can be used to perform a specific task and return a single value or a table. Functions can accept input parameters and return output parameters, but they cannot be used to perform tasks such as data manipulation. They are typically used to perform calculations or data validation, and they can be used as part of a SELECT statement.
+
+## Difference Between Stored Procedure And Function In SQL Server
+
+One of the main differences between stored procedures and functions is that stored procedures can have side effects, while functions cannot. A side effect is a change to the database state, such as an insert, update, or delete. Stored procedures can also execute multiple statements, while functions can only return a single value or table.
+
+Another difference is that stored procedures can be executed using the EXECUTE statement, while functions are called using the SELECT statement. Functions can also be used in the SELECT statement, whereas stored procedures cannot.
+
+<table class="table-fixed border text-center">
+  <thead>
+    <tr>
+      <th class="border !px-6 py-4">User Defined Functions</th>
+      <th class="border !px-6 py-4">Stored Procedure</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr><td class="border !px-6 py-4">Function must return a value.</td><td class="border !px-6 py-4">Stored Procedure may or not return values.</td></tr>
+<tr><td class="border !px-6 py-4">Will allow only Select statements, it will not allow us to use DML statements.</td><td class="border !px-6 py-4">Can have select statements as well as DML statements such as insert, update, delete and so on</td></tr>
+<tr><td class="border !px-6 py-4">It will allow only input parameters, doesn't support output parameters.</td><td class="border !px-6 py-4">It can have both input and output parameters.</td></tr>
+<tr><td class="border !px-6 py-4">It will not allow us to use try-catch blocks.</td><td class="border !px-6 py-4">For exception handling we can use try catch blocks.</td></tr>
+<tr><td class="border !px-6 py-4">Transactions are not allowed within functions.</td><td class="border !px-6 py-4">Can use transactions within Stored Procedures.</td></tr>
+<tr><td class="border !px-6 py-4">We can use only table variables, it will not allow using temporary tables.</td><td class="border !px-6 py-4">Can use both table variables as well as temporary table in it.</td></tr>
+<tr><td class="border !px-6 py-4">Stored Procedures can't be called from a function.</td><td class="border !px-6 py-4">Stored Procedures can call functions.</td></tr>
+<tr><td class="border !px-6 py-4">Functions can be called from a select statement.</td><td class="border !px-6 py-4">Procedures can't be called from Select/Where/Having and so on statements. Execute/Exec statement can be used to call/execute Stored Procedure.</td></tr>
+<tr><td class="border !px-6 py-4">A UDF can be used in join clause as a result set.</td><td class="border !px-6 py-4">Procedures can't be used in Join clause</td></tr>
+
+  </tbody>
+</table>
+
+In summary, stored procedures and functions in SQL Server are both used to perform specific tasks, but they have some key differences. Stored procedures can have side effects, execute multiple statements and can be executed using the EXECUTE statement, while functions cannot have side effects, can only return a single value or table, and are called using the SELECT statement. Understanding these differences can help developers choose the right tool for their specific task and improve the performance of their code.

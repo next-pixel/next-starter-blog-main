@@ -23,12 +23,25 @@ const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
       type: 'website',
         url: 'https://krunal-shah.web.app/',
         title: ownerName,
-        description: `I am Krunal Shah or you can say kunal shah, i am writing a blogs, i have Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`
+        description: `I am Krunal Shah or you can say kunal shah, i am writing a blogs, i have Over 8 years of experience in web development such as developing dynamic applications with top technologies. Deep knowledge of .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript and CSS3, etc. and a Microsoft Certified: Azure Developer Associate.`,
+        images: [
+          {
+            url: 'https://krunal-shah.web.app/static/avatar.jpg',
+            width: 298,
+            height: 298,
+            alt: 'krunal shah Image',
+          }
+        ]
     },
     additionalMetaTags:[{
       name: 'google-site-verification',
       content: '5e06x4xhLxiUVlXqg2b93KekaEyO1Fyo84aTZcBEwqo'
-    }]
+    },
+    {
+      name: 'keywords',
+      content: 'Krunal shah, kunal shah,Knowledge , developer software,development website,developer`s,full stack software developer,developer blog,development website,full stack,web developer blog,aspnet sql server, dynamic aspnet sql, sql server payment, ecommere dynamic aspnet,software engineer, .NET Core, Angular CLI, Node Js, React, Asp.NET MVC, Sql Server, Oracle, Azure, HTML5, Javascript , CSS3'
+    }
+  ]
   }
 
   return (
@@ -38,6 +51,7 @@ const Home: NextPage<HomeProps> = ({ blogs = [] }) => {
 
 
       </HeroWithPhoto>
+     
 <h1>Featured Post</h1>
       <BlogList blogs={blogs} title=''>
         <UnstyledLink

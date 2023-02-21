@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://krunal-shah.web.app/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/tags/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/privacy-policy/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/website-disclaimer/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/static/Krunal_Shah_8YearDotNetDeveloper.pdf</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/21-AI-tools-to-improve-every-aspect-of-your-life-from-programming-to-content-creation/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/7-Reasons-Why-You-Should-Use-DI-Dependency-Injection-Or-Inversion-Of-Control/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/How-To-Enable-Gzip-Compression-In-Asp-Net-Core-Using-Dot-Net-CLI-With-Example/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/The-Next-Big-Thing-in-What-s-New-In-Asp-dotnet-Core-7/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Comparing-Functional-and-Object-Oriented-Programming/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/SQL-Server-Understanding-the-Differences-and-Uses-of-Stored-Procedures-and-Functions/</loc>
+  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

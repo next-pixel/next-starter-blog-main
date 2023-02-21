@@ -33,7 +33,17 @@ export const generateMetaDataBlog = (data: MetaData): CustomSeoProps => {
           height: 600
         }
       ],
-      url: siteURL + data.slug
+      url: siteURL + data.slug,
+      description: data.summary,
+      locale: 'en_GB',
+      title: data.title,
+      site_name: 'Krunal Shah',
+      profile: {
+        firstName: 'Krunal',
+        lastName: 'Shah',
+        username: 'Krunal-shah',
+        gender: 'male',
+      }
     },
     twitter: {
       cardType: 'summary_large_image',

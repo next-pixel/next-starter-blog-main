@@ -14,6 +14,7 @@ const Nav = () => {
         <UnstyledLink
           key={id}
           href={item.href}
+          sr={item.children}
           className={twclsx(
             'px-1.5 py-0.5 transition font-semibold bg-gradient-to-tr rounded ',
             pathname === item.href

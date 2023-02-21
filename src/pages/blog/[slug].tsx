@@ -23,10 +23,11 @@ interface URLSlug extends ParsedUrlQuery {
 interface BlogPostProps {
   mdxSource: MDXRemoteSerializeResult
   data: Blog
+  blogs: Array<Blog>
 }
 
 
-const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource }) => {
+const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource,blogs }) => {
   const metaData = useMetaData(data)
   //const isMediumScreen = useMediaQuery('(min-width: 768px)')
   //const ISODate = dateStringToISO(data.published)
@@ -35,7 +36,9 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource }) => {
 
   return (
     <Layout {...metaData} as='main' title={data.title} description={data.summary}>
-      <article>
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 md gap-4">
+        <div className='col-span-3'>
+      <article >
         <figure className='w-full pt-0'>
           
         </figure>
@@ -127,8 +130,38 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource }) => {
       publisherLogo={siteURL + data.author_image}
       description={data.summary}
     />
+    <ArticleJsonLd
+      type="Blog"
+      url={siteURL + '/blog/' + data.slug}
+      title={data.title}
+      images={[
+        siteURL + '/static/default-thumbnail.jpg'
+      ]}
+      datePublished={data.last_modified}
+      dateModified={data.last_modified}
+      authorName={data.author_name}
+      description={data.summary}
+    />
       </article>
+      </div>
+      <div className='mt-10 md:sticky top-28 md:max-h-12'>
+      <h2 className="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">Blogs</h2>
+        <ul className="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
+        
+          {blogs.map((val) => (
+            <li key={val.slug}>
+               <a className="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300" href={`/blog/${val.slug}`}>
+              {val.title}
+            </a>
+          </li>
+              
+          ))}
+           
+        </ul>
+      </div>
+      </div>
     </Layout>
+    
   )
 }
 
@@ -146,7 +179,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const mdxPrism = require('mdx-prism')
-
+  const blogs = await getBlog()
   const { slug } = ctx.params as URLSlug
   const blog = await getBlogBySlug(slug)
 
@@ -155,7 +188,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       mdxSource,
-      data: { ...blog.data, slug }
+      data: { ...blog.data, slug },
+      blogs: blogs.map((b) => ({ ...b.data, slug: b.slug }))
     }
   }
 }
