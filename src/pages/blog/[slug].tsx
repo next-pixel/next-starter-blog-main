@@ -1,11 +1,9 @@
 import MDXComponents from '@/components/contents'
 import Layout from '@/components/template/Layout'
-import { HomeIcon,ChevronRightIcon } from '@heroicons/react/solid'
 import { getBlog, getBlogBySlug } from '@/helpers'
 import {  useMetaData } from '@/hooks'
 import { dateFormat, dateStringToISO } from '@/libs/dateFormat'
 import { twclsx } from '@/libs/twclsx'
-import Link from 'next/link'
 import { BreadcrumbJsonLd,ArticleJsonLd } from 'next-seo';
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps, NextPage } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
@@ -47,7 +45,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource,blogs }) => {
           <div className='flex items-center gap-4'>
            
             <p className='text-sm md:text-base'>
-              Written by {data.author_name} /{' '}
+              Written by <a title={data.author_name} href={siteURL}>{data.author_name} </a> /{' '}
               <time dateTime={dateStringToISO(data.published)}>{dateFormat(data.published)}</time>
               <br></br>
             {data.tags.map((tag) => (
@@ -57,30 +55,37 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource,blogs }) => {
             ))}
             <br></br>
             
-            <br></br><br></br>
+           
+            <div className="container flex items-center px-6 py-4 mx-auto overflow-x-auto whitespace-nowrap">
+        <a href={siteURL} title='Home' className="text-gray-600 dark:text-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+        </a>
 
-            <nav className="flex" aria-label="Breadcrumb">
-  <ol className="inline-flex items-center space-x-1 md:space-x-3">
-    <li className="inline-flex items-center">
-    <HomeIcon className='w-4 md:w-5 h-4 md:h-5 text-main-3'></HomeIcon> &nbsp;
-      <Link href="/" >
-        Home
-      </Link>
-    </li>
-    <li>
-      <div className="flex items-center">
-        <ChevronRightIcon className='w-4 md:w-5 h-4 md:h-5 text-main-3'></ChevronRightIcon> &nbsp;
-        <Link href="/blog" >Blog</Link>
-      </div>
-    </li>
-    <li aria-current="page">
-      <div className="flex items-center">
-        <ChevronRightIcon className='w-4 md:w-5 h-4 md:h-5 text-main-3'></ChevronRightIcon> &nbsp;
+        <span className="mx-5 text-gray-500 dark:text-gray-300 rtl:-scale-x-100">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path Fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" Clip-rule="evenodd" />
+            </svg>
+        </span>
+
+        <a href={ siteURL + "/blog"} title='Blogs' className="text-gray-600 !whitespace-normal dark:text-gray-200 hover:underline">
+        Blog
+        </a>
+
+        <span className="mx-5 text-gray-500 dark:text-gray-300 rtl:-scale-x-100">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path Fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" Clip-rule="evenodd" />
+            </svg>
+        </span>
+
+        <a href={siteURL + '/blog/' + data.slug} className="text-gray-600 !whitespace-normal dark:text-gray-200 hover:underline">
         {data.title}
-      </div>
-    </li>
-  </ol>
-</nav>
+        </a>
+
+      
+    </div>
+           
 
             </p>
           </div>
@@ -129,10 +134,14 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource,blogs }) => {
       publisherName={data.author_name}
       publisherLogo={siteURL + data.author_image}
       description={data.summary}
+      isAccessibleForFree={true}
     />
     <ArticleJsonLd
-      type="Blog"
+      type="BlogPosting"
       url={siteURL + '/blog/' + data.slug}
+      isAccessibleForFree={true}
+      publisherName={data.author_name}
+
       title={data.title}
       images={[
         siteURL + '/static/default-thumbnail.jpg'
@@ -141,7 +150,9 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource,blogs }) => {
       dateModified={data.last_modified}
       authorName={data.author_name}
       description={data.summary}
+      
     />
+    
       </article>
       </div>
       <div className='mt-10 md:sticky top-28 md:max-h-12'>
@@ -150,7 +161,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource,blogs }) => {
         
           {blogs.map((val) => (
             <li key={val.slug}>
-               <a className="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300" href={`/blog/${val.slug}`}>
+               <a className="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300" title={val.title} href={`/blog/${val.slug}`}>
               {val.title}
             </a>
           </li>
@@ -158,6 +169,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ data, mdxSource,blogs }) => {
           ))}
            
         </ul>
+        
       </div>
       </div>
     </Layout>
@@ -189,7 +201,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     props: {
       mdxSource,
       data: { ...blog.data, slug },
-      blogs: blogs.map((b) => ({ ...b.data, slug: b.slug }))
+      blogs: blogs.map((b) => ({ ...b.data, slug: b.slug })).slice(0, 5)
     }
   }
 }

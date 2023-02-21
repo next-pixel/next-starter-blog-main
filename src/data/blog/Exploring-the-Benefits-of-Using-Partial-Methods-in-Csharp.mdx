@@ -1,0 +1,124 @@
+---
+featured: false
+title: 'Exploring the Benefits of Using Partial Methods in C#: A Beginners Guide'
+summary: 'Learn about Partial Methods in C#: a powerful feature for customizing auto-generated code, split method declaration and implementation within partial class or struct, with many options. #CSharp #PartialMethods'
+published: '01/25/2023'
+last_modified: '01/25/2023'
+author_name: 'Krunal Shah'
+author_image: '/static/avatar.jpg'
+tags: ['Partial Methods']
+keywords: ['What are partial methods?','When should you use partial methods?','Where can partial methods be used?','How do partial methods work?','An advantage of using partial methods','A disadvantage of partial methods','C#', 'Partial Methods', 'Partial Class', 'Partial Struct', 'Auto-generated code', 'Data Access Layer', 'ObjectContext', 'Customizing', 'Implementation', 'Declaration', 'Private', 'Return void', 'Static', 'Unsafe', 'Generic', 'Ref parameters', 'Out parameters', 'Efficient', 'Maintainable code']
+---
+
+## Introduction
+
+Partial classes and structs in C# allow developers to split the implementation of a class or struct across multiple files. Within these partial classes and structs, developers can also use a special type of method called a partial method. In this guide, we will explore what partial methods are, why they are useful, and how to use them in your C# code.
+
+## What is partial method?
+
+A [partial method](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/partial-method) is a special method that is declared within a partial class or struct. The declaration of the method, which includes the method signature, can be placed in one part of the class or struct, while the implementation can be provided in another part. If no implementation is provided for a declared partial method, the method and all calls to that method will be removed at compile time.
+
+## Benefits of Using Partial Methods
+
+One of the main benefits of using partial methods is that they can be used to customize auto-generated code by a tool. For example, when using the Entity Framework to create a [data access layer](https://www.geeksforgeeks.org/data-access-layer/) (DAL), Visual Studio may generate a partial method called OnContextCreated(). The implementation of this method is left up to the developer, allowing them to add their own custom logic.
+
+It's important to note that partial methods are implicitly private and must be declared with the "partial" keyword. They must also return void and can be static, unsafe, and generic. Additionally, they can have ref parameters but not out parameters, since these cannot return a value.
+
+## Here is an example of a partial method in C#:
+
+```CSharp
+// First part of the partial class
+public partial class MyPartialClass
+{
+    partial void MyMethod();
+}
+
+// Second part of the partial class
+public partial class MyPartialClass
+{
+    partial void MyMethod()
+    {
+        Console.WriteLine("MyMethod has been called.");
+    }
+}
+
+// Usage of the partial method
+MyPartialClass obj = new MyPartialClass();
+obj.MyMethod(); // Output: "MyMethod has been called."
+```
+
+In this example, we have a partial class called "MyPartialClass" that contains a partial method called "MyMethod". The declaration of the method is in the first part of the class, while the implementation is in the second part of the class. The method is called on an object of the class, which will output "MyMethod has been called.".
+You can also use it in partial struct or interface
+
+```CSharp
+// First part of the partial struct
+public partial struct MyPartialStruct
+{
+    partial void MyMethod();
+}
+
+// Second part of the partial struct
+public partial struct MyPartialStruct
+{
+    partial void MyMethod()
+    {
+        Console.WriteLine("MyMethod has been called.");
+    }
+}
+
+// Usage of the partial method
+MyPartialStruct obj = new MyPartialStruct();
+obj.MyMethod(); // Output: "MyMethod has been called."
+
+```
+```CSharp
+// First part of the partial interface
+public partial interface IMyPartialInterface
+{
+    void MyMethod();
+}
+
+// Second part of the partial interface
+public partial interface IMyPartialInterface
+{
+    void MyMethod()
+    {
+        Console.WriteLine("MyMethod has been called.");
+    }
+}
+
+// Usage of the partial method
+IMyPartialInterface obj = new IMyPartialInterface();
+obj.MyMethod(); // Output: "MyMethod has been called."
+```
+
+Note that, you can't create the instance of interface but the above example is to show how you can use partial method in interface.
+
+In summary, partial methods are a powerful feature in C# that can be used to customize auto-generated code, and provide a way to separate the declaration and implementation of a method within a partial class or struct. By understanding the benefits and limitations of partial methods, developers can use them to write more efficient and maintainable code.
+
+## Some of Basic Question on partial methods
+
+
+#### What are partial methods in C#?
+
+Partial methods are special methods that allow developers to split the declaration and implementation of a method within a partial class or struct.
+
+#### When should you use partial methods?
+
+Partial methods are particularly useful for customizing auto-generated code, such as when using the Entity Framework to create a DAL.
+
+#### Where can partial methods be used?
+
+Partial methods can be used within partial classes or structs in C#.
+
+#### How do partial methods work?
+
+Partial methods are implicitly private and must have the 'partial' keyword, must return void, and can be static, unsafe, and generic, but cannot have out parameters.
+
+#### What are the advantages of using partial methods?
+
+One of the main advantage is that they allow developers to add their own custom logic to auto-generated code, while maintaining the integrity of the original code.
+
+#### What are the disadvantages of partial methods?
+
+A disadvantage of partial methods is that if the implementation is not provided, the method and all calls to that method will be removed at compile time, which can lead to unexpected behavior.

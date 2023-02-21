@@ -34,4 +34,7 @@
   :is(h1, h2) ~ p:not(:first-of-type) {
     @apply mt-[0.875em];
   }
+
+ 
+
 }

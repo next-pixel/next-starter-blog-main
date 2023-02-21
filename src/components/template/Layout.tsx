@@ -1,8 +1,8 @@
-import CustomSeo, { CustomSeoProps } from '@/components/atoms/CustomSeo'
+import CustomSeo from '@/components/atoms/CustomSeo'
 
 import React from 'react'
 
-interface LayoutProps extends CustomSeoProps {
+interface LayoutProps {
   title: string
   description: string
   children: React.ReactNode

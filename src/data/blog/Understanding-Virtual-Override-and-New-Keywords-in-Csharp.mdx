@@ -1,0 +1,96 @@
+---
+featured: false
+title: 'Understanding Virtual, Override and New Keywords in C#'
+summary: 'Learn the differences and proper usage of virtual, override, and new keywords in C#. Enhance your understanding as a C# developer and ensure consistent behavior in class hierarchy with this comprehensive guide.'
+published: '01/25/2023'
+last_modified: '01/25/2023'
+author_name: 'Krunal Shah'
+author_image: '/static/avatar.jpg'
+tags: ['virtual keyword','override keyword','new keyword']
+keywords: ['virtual keyword' ,'override keyword' ,'new keyword' ,'C#' ,'class hierarchy' ,'polymorphism' ,'inheritance' ,'method overriding' ,'method hiding' ,'code reuse' ,'object-oriented programming' ,'programming language' ,'development' ,'software engineering' ,'what is virtual keyword' ,'what is override keyword' ,'what is new keyword' ,'where to use virtual keyword' ,'where to use override keyword' ,'where to use new keyword' ,'when to use virtual keyword' ,'when to use override keyword' ,'when to use new keyword' ,'how to use virtual keyword' ,'how to use override keyword' ,'how to use new keyword' ,'advantages of virtual keyword' ,'advantages of override keyword' ,'advantages of new keyword' ,'disadvantages of virtual keyword' ,'disadvantages of override keyword' ,'disadvantages of new keyword' ,'virtual keyword example' ,'override keyword example' ,'new keyword example']
+---
+
+## Introduction
+
+As a C# developer, it's essential to have a deep understanding of the virtual, override, and new keywords. These keywords are used to control how methods and properties in a class hierarchy behave and interact with each other. In this article, we will explore the differences between these keywords and when to use them.
+
+## Virtual Keyword
+
+The virtual keyword is used to indicate that a method or property can be overridden in a derived class. When a method or property is declared as virtual, it can be overridden by any class that derives from the class that contains the virtual method or property.
+
+Here's an example of a class that contains a virtual method:
+
+```csharp
+class Shape
+{
+    public virtual void Draw()
+    {
+        Console.WriteLine("Drawing a shape");
+    }
+}
+```
+
+In this example, the Draw() method is marked as virtual. This means that any class that inherits from the Shape class can override the Draw() method to provide its own implementation.
+
+For example, the following class overrides the Draw() method to provide its own implementation:
+
+```Csharp
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing a circle");
+    }
+}
+```
+
+When the Draw() method is called on an instance of the Circle class, the overridden implementation will be called.
+
+## Override Keyword
+
+The override keyword is used to indicate that a method or property in a derived class is intended to override a virtual method or property in the base class.
+
+Here's an example of a class that overrides a virtual method:
+
+```csharp
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing a circle");
+    }
+}
+```
+
+In this example, the Draw() method in the Circle class is marked as override. This tells the compiler that the method is intended to override the virtual Draw() method in the Shape class.
+
+If the method in the base class is not virtual, the compiler will raise an error.
+
+It's important to note that the override keyword can only be used to override virtual or abstract methods and properties.
+
+## New Keyword
+
+The new keyword is used to indicate that a method or property in a derived class is intended to hide, rather than override, a method or property in the base class.
+
+Here's an example of a class that uses the new keyword to hide a method:
+
+```csharp
+class Circle : Shape
+{
+    public new void Draw()
+    {
+        Console.WriteLine("Drawing a circle");
+    }
+}
+```
+
+In this example, the Draw() method in the Circle class is marked as new. This tells the compiler that the method is intended to hide, rather than override, the Draw() method in the Shape class.
+
+When the Draw() method is called on an instance of the Circle class, the implementation in the Circle class will be called, rather than the implementation in the Shape class.
+
+It's important to note that the new keyword can be used to hide any method or property, regardless of whether it's virtual or not.
+
+## Conclusion
+
+In C#, the virtual, override, and new keywords are used to control how the inherited members are accessed and implemented in derived classes. Virtual methods can be overridden by derived classes, override methods provide a new implementation for virtual methods, and new methods hide inherited methods with the same name and signature. Understanding these keywords and how to use them correctly is essential for creating robust and maintainable object-oriented code in C#.
+

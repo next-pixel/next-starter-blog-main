@@ -1,0 +1,52 @@
+---
+featured: false
+title: 'Understanding the Differences Between C# Const, ReadOnly, and Static'
+summary: 'Learn the key distinctions between C# Const, ReadOnly, and Static keywords and when to use each in your code.'
+published: '01/25/2023'
+last_modified: '01/25/2023'
+author_name: 'Krunal Shah'
+author_image: '/static/avatar.jpg'
+tags: ['Const','ReadOnly','Static']
+keywords: ['C# Const', 'C# ReadOnly', 'C# Static', 'Differences between C# Const, ReadOnly, and Static', 'What is a Const Variable in C#?', 'What is a ReadOnly Variable in C#?','What is a Static Variable in C#?', 'When to use Const, ReadOnly, and Static in C#', 'Where to use Const, ReadOnly, and Static in C#', 'How to use Const, ReadOnly, and Static in C#', 'Advantages of using Const, ReadOnly, and Static in C#', 'Disadvantages of using Const, ReadOnly, and Static in C#', 'Const vs ReadOnly vs Static in C#', 'C# Const vs ReadOnly vs Static', 'Understanding the differences between C# Const, ReadOnly, and Static']
+---
+
+## Introduction
+
+When it comes to programming in C#, understanding the differences between various keywords and concepts can be crucial to writing efficient and effective code. In this article, we'll take a closer look at three such keywords: const, readonly, and static. While all three are used to declare variables, they have distinct behaviors and uses.
+
+## What is a Const Variable in C#?
+
+A const variable is a variable that has a value that cannot be changed after it is declared. The value of a const variable is also known at compile time, and it is stored in the assembly's metadata. Once a const variable is declared, it cannot be modified, and its value is the same throughout the entire program.
+
+One of the main uses of const variables is to define values that will not change throughout the program. For example, you might use a const variable to store the value of pi or the number of seconds in a minute.
+
+It is important to note that a const variable must be given an explicit value at the time of declaration. It is also important to note that a const variable must be a value type, and not a reference type. This means that a const variable cannot be assigned a null value or an object.
+
+## What is a ReadOnly Variable in C#?
+
+A readonly variable is similar to a const variable in that it cannot be modified after it is declared. The main difference between the two is that the value of a readonly variable can be set at runtime, whereas the value of a const variable must be set at compile time. This means that the value of a readonly variable can be determined by a calculation, rather than being a fixed value.
+
+One of the main uses of readonly variables is to define values that should not be modified by the program, but that may change based on certain conditions. For example, you might use a readonly variable to store the current date and time.
+
+A readonly variable can be both a value type or a reference type. It can be assigned a null value or an object.
+
+## What is a Static Variable in C#?
+
+A static variable is a variable that belongs to the class, rather than an instance of the class. This means that there is only one copy of a static variable, regardless of how many instances of the class are created.
+
+One of the main uses of static variables is to define values that should be shared across all instances of a class. For example, you might use a static variable to store a counter that keeps track of how many instances of a class have been created.
+
+A static variable can be both a value type or a reference type. It can be assigned a null value or an object.
+
+## Differences Between Const, ReadOnly and Static
+
+In summary, the main differences between const, readonly, and static are as follows:
+
+* const variables are variables whose values cannot be changed and are known at compile time. They are value types and cannot be assigned a null value or an object.
+
+* readonly variables are variables whose values cannot be changed after they are declared but can be set at runtime. They can be both value and reference types.
+
+* static variables are variables that belong to the class, rather than an instance of the class. They can be both value and reference types
+
+
+

@@ -9,62 +9,102 @@
 
 <url>
   <loc>https://krunal-shah.web.app/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/blog/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/tags/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/privacy-policy/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/website-disclaimer/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/static/Krunal_Shah_8YearDotNetDeveloper.pdf</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/blog/21-AI-tools-to-improve-every-aspect-of-your-life-from-programming-to-content-creation/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/blog/7-Reasons-Why-You-Should-Use-DI-Dependency-Injection-Or-Inversion-Of-Control/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/blog/How-To-Enable-Gzip-Compression-In-Asp-Net-Core-Using-Dot-Net-CLI-With-Example/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/blog/The-Next-Big-Thing-in-What-s-New-In-Asp-dotnet-Core-7/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/blog/Comparing-Functional-and-Object-Oriented-Programming/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Exploring-the-Benefits-of-Using-Partial-Methods-in-Csharp/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Introduction-to-Csharp-Anonymous-Methods/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Introduction-to-Csharp-Extension-Methods/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Introduction-to-Csharp-Lambda-Expressions/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://krunal-shah.web.app/blog/SQL-Server-Understanding-the-Differences-and-Uses-of-Stored-Procedures-and-Functions/</loc>
-  <lastmod>2023-01-20T11:05:16+00:00</lastmod>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Understanding-the-Differences-Between-Csharp-Const-ReadOnly-and-Static/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Understanding-the-Differences-between-int-Int16-Int32-and-Int64-in-Csharp/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Understanding-the-Differences-between-Ref-and-Out-Parameters-in-Csharp/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://krunal-shah.web.app/blog/Understanding-Virtual-Override-and-New-Keywords-in-Csharp/</loc>
+  <lastmod>2023-01-27T14:04:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
